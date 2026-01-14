@@ -1,0 +1,102 @@
+/* 全体の外枠 */
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #fff;
+    width: 1000px;
+  margin: 0 auto;
+}
+
+/* ドロワー（横から出るメニュー本体） */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;      /* 以前より少し広めに設定 */
+  height: 100vh;
+  background-color: #1a1a1c; /* グラブル風の暗色 */
+  z-index: 9000;     /* overlayより上に */
+  transform: translateX(-100%); /* 最初は隠す */
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 120px; /* 上部に余裕を持たせる */
+}
+
+.drawer.open {
+  transform: translateX(0); /* オープン時に出現 */
+}
+
+/* ドロワー内のナビゲーションリスト */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar a {
+  display: block;
+  color: #ccc;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.sidebar a:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* メインコンテンツ */
+.mainContent {
+  flex: 1;
+  padding: 40px;
+  background-color: #f5f5f7;
+
+}
+
+/* ハンバーガーボタン（最強の優先度） */
+.menuButton {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;     /* 演出（奥義）より手前に出すイメージ */
+  padding: 12px 20px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.menuButton:hover {
+  background-color: #e68a00;
+}
+
+/* 閉じるボタン */
+.closeButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* 背景の暗い幕 */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 8000;     /* drawerより下、メインコンテンツより上 */
+}
