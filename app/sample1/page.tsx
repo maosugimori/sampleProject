@@ -4,10 +4,10 @@ import { LinkComponent } from "../components/LinkComponent";
 import { PhotoLibraryButton } from "../components/PhotoLibraryButton";
 import WelcomeModal from "../components/WelcomeModal ";
 
-export default function About() {
+export default function Sample1() {
   return (
       <div> 
-          <h1>Aboutな ページ</h1>
+          <h1>Sample1 ページ</h1>
 
           <div className="">
             <WelcomeModal />
